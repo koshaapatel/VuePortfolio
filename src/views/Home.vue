@@ -1,18 +1,35 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <b-container>
+    <b-row>
+      <b-col lg="4" class="pb-2">
+        <b-button size="sm">Small Button</b-button>
+      </b-col>
+      <b-col lg="4" class="pb-2">
+        <b-button>Default Button</b-button>
+      </b-col>
+      <b-col lg="4" class="pb-2">
+        <b-button size="lg">Large Button</b-button>
+      </b-col>
+    </b-row>
+    <p>Hello, Bootstrap-Vue</p>
+    <h1>jaja</h1>
+    <b-btn
+      variant="primary"
+      @click="showAlert = true"
+      v-b-tooltip.hover
+      title="This button triggers the alert"
+      >Click
+    </b-btn>
+    <b-alert v-bind:show="showAlert" variant="success">
+      You clicked the button!
+    </b-alert>
+  </b-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
+  data: () => ({
+    showAlert: false
+  })
 };
 </script>
